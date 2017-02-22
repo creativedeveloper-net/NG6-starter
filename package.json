@@ -41,6 +41,7 @@
     "ng-annotate-loader": "0.0.10",
     "node-libs-browser": "^0.5.0",
     "node-sass": "^3.13.0",
+    "npm-run-all": "4.0.1",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.0",
     "sass-loader": "^4.0.2",
@@ -54,8 +55,9 @@
   "scripts": {
     "build": "gulp webpack",
     "component": "gulp component",
+    "json-server": "json-server --watch mock-api/db.json --port 3002",
     "serve": "gulp serve",
-    "start": "gulp serve",
+    "start": "npm-run-all --parallel json-server serve",
     "test": "karma start",
     "watch": "gulp serve",
     "webpack": "gulp webpack"
